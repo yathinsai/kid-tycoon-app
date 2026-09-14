@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 160 20% 6%;
+    --foreground: 150 20% 95%;
+
+    --card: 160 15% 10%;
+    --card-foreground: 150 20% 95%;
+
+    --popover: 160 15% 10%;
+    --popover-foreground: 150 20% 95%;
+
+    --primary: 152 60% 48%;
+    --primary-foreground: 160 20% 6%;
+
+    --secondary: 160 12% 16%;
+    --secondary-foreground: 150 20% 85%;
+
+    --muted: 160 10% 14%;
+    --muted-foreground: 150 10% 55%;
+
+    --accent: 152 60% 48%;
+    --accent-foreground: 160 20% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 12% 18%;
+    --input: 160 12% 18%;
+    --ring: 152 60% 48%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 160 15% 10%;
+    --sidebar-foreground: 150 20% 95%;
+    --sidebar-primary: 152 60% 48%;
+    --sidebar-primary-foreground: 160 20% 6%;
+    --sidebar-accent: 160 12% 16%;
+    --sidebar-accent-foreground: 150 20% 85%;
+    --sidebar-border: 160 12% 18%;
+    --sidebar-ring: 152 60% 48%;
+
+    --wealth-glow: 152 80% 55%;
+    --gold: 45 90% 55%;
+    --gold-foreground: 45 90% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .wealth-glow {
+    text-shadow: 0 0 40px hsl(152 80% 55% / 0.4), 0 0 80px hsl(152 80% 55% / 0.15);
+  }
+
+  .card-glow {
+    box-shadow: 0 0 30px hsl(152 60% 48% / 0.08), inset 0 1px 0 hsl(150 20% 95% / 0.05);
+  }
+
+  .badge-gold {
+    background: linear-gradient(135deg, hsl(45 90% 55%), hsl(35 85% 45%));
+    box-shadow: 0 2px 12px hsl(45 90% 55% / 0.3);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 12s linear infinite;
+  }
+}
